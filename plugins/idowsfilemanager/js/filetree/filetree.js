@@ -905,7 +905,7 @@ if ( jQuery )
                  * @description Bind the delete file function to the delete link
                  * @returns {void}
                  */
-                this.bindDeleteFile = function () {
+                this.bindDeleteFile = () => {
                     $ ( "a[title='Delete']" ).on ( 'click', function () {
                         let anchorLink = $ ( this );
                         let file = encodeURIComponent ( $ ( this ).parent ().parent ().attr ( 'data-id' ) );
@@ -922,7 +922,7 @@ if ( jQuery )
                  * @description Bind the delete folder function to the delete folder icons
                  * @returns {void}
                  */
-                this.DeleteFolder = function () {
+                this.DeleteFolder = () => {
                     $ ( "a[title='Delete_Folder']" ).on ( 'click', function () {
                         let folder = encodeURIComponent ( $ ( this ).parent ().parent ().attr ( 'data-id' ) );
                         let parentNode = $ ( this ).parent ().parent ();
@@ -936,7 +936,7 @@ if ( jQuery )
                  * @description Binds breadcrumb navigation
                  * @returns {void}
                  */
-                this.breadcrumb = function () {
+                this.breadcrumb = () => {
                     $ ( ".idows-breadcrumbs" ).find ( '*[data-dir]' ).each ( function () {
                         $ ( this ).click ( function () {
                             //load view
@@ -955,7 +955,7 @@ if ( jQuery )
                  * @param {text path} dir
                  * @returns {void}
                  */
-                this.listFiles = function ( elem, dir ) {
+                this.listFiles = ( elem, dir ) => {
 
                     //init tree load request to null
                     let fileLoadRequest = null;

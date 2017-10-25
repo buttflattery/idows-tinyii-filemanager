@@ -10,15 +10,15 @@
  * @Version: 1.0
  
  * options
-        iframeOpened    :   false,      Iframewindow for the file upload to show error after upload if any , default : false
-        timeoutStore    :   false,      File upload timeout if upload process takes more than specified minutes it opens the troubleshooting window.
-        defaultView     :   'thumbnail', Selected / default view for the file list.
-        viewScript      :   'thumbview', Action name for the view type selected
-        assetsDir       :   null,       Plugin assets directory root, path to the idowsfilemanger plugin directory relative to the root of the project. 
-                                        This is normally inside the tinymce/plugins folder.Demo path is /js/tinymce/plugins/idowsfilemanager.
-        uploadDir       :   '',         Upload assets directory, this needs to be set equal to the directory path you will use for the uploading of the assets.
-        currentDirectory:   '',         Current browsed directory for the filemanager, default is empty means root folder.
-        phpViewScript   :   '/filemanager/' + this.viewScript, Complete path for the php script needs pretty url enabled, example /controller/action_name
+ iframeOpened    :   false,      Iframewindow for the file upload to show error after upload if any , default : false
+ timeoutStore    :   false,      File upload timeout if upload process takes more than specified minutes it opens the troubleshooting window.
+ defaultView     :   'thumbnail', Selected / default view for the file list.
+ viewScript      :   'thumbview', Action name for the view type selected
+ assetsDir       :   null,       Plugin assets directory root, path to the idowsfilemanger plugin directory relative to the root of the project. 
+ This is normally inside the tinymce/plugins folder.Demo path is /js/tinymce/plugins/idowsfilemanager.
+ uploadDir       :   '',         Upload assets directory, this needs to be set equal to the directory path you will use for the uploading of the assets.
+ currentDirectory:   '',         Current browsed directory for the filemanager, default is empty means root folder.
+ phpViewScript   :   '/filemanager/' + this.viewScript, Complete path for the php script needs pretty url enabled, example /controller/action_name
  */
 
 'use esversion: 6';
@@ -362,7 +362,7 @@ var idowsFileBrowser = new function () {
             } );
         } );
 
-    }
+    };
 
     // bootstrap edit file /folder modal bootstrap
     /**
@@ -713,7 +713,7 @@ var idowsFileBrowser = new function () {
      * @description displays iframe message if upload file fails for some reason    
      * @returns {void}
      */
-    this.showIframe = function () {
+    this.showIframe =  () =>{
         $ ( "#upload_target" ).addClass ( 'upload_target_visible' );
         this.options.iframeOpened = true;
     };
@@ -724,7 +724,7 @@ var idowsFileBrowser = new function () {
      * @param {type} response
      * @returns {undefined}
      */
-    this.uploadFinish = function ( response ) {
+    this.uploadFinish =  ( response ) =>{
         let isFail = response.result === 'failed';
 
         if ( isFail ) {
@@ -757,7 +757,7 @@ var idowsFileBrowser = new function () {
      * @param {JSON} switchOptions
      * @returns {void}
      */
-    this.switchView = function ( switchOptions ) {
+    this.switchView =  ( switchOptions ) =>{
 
         let defaultSwitchOptions = {
             subfolder : '',
@@ -831,7 +831,7 @@ var idowsFileBrowser = new function () {
                     $ ( li ).parent ().siblings ().removeClass ( 'selected' );
                     $ ( li ).parent ().addClass ( 'selected' );
                 } );
-            },
+            }
         };
 
         //call the selected view event
@@ -848,7 +848,7 @@ var idowsFileBrowser = new function () {
      * @param {type} keyword
      * @returns {undefined}
      */
-    this.searchFilter = function ( keyword ) {
+    this.searchFilter = ( keyword ) => {
         $ ( '#fileview .idows-file,#fileview .idows-folder ' ).each ( function () {
             let filename = $ ( this ).attr ( 'title' );
             let isFilenameMatch = filename.indexOf ( keyword ) < 0;
