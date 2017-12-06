@@ -12,9 +12,9 @@ $cs = Yii::app ()->getClientScript ();
 $baseUrl = Yii::app ()->getBaseUrl ( true );
 $cs->registerCoreScript ( 'jquery' , CClientScript::POS_HEAD );
 $cs->registerCssFile ( '/css/screen.css' , CClientScript::POS_HEAD );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/nailThumb/jquery.nailthumb.1.1.css' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/nailThumb/jquery.nailthumb.1.1.js' , CClientScript::POS_HEAD );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/nailThumb/jquery.showLoading.min.js' , CClientScript::POS_HEAD );
+$cs->registerCssFile ( $this->editorAssets . '/css/nailThumb/jquery.nailthumb.1.1.css' );
+$cs->registerScriptFile ( $this->editorAssets . '/js/nailThumb/jquery.nailthumb.1.1.js' , CClientScript::POS_HEAD );
+$cs->registerScriptFile ( $this->editorAssets . '/js/nailThumb/jquery.showLoading.min.js' , CClientScript::POS_HEAD );
 $cs->registerScript ( 'loaders' , '$("div.showLoadingIcon").
             nailthumb({
                 width: 500,
@@ -29,5 +29,5 @@ $cs->registerScript ( 'loaders' , '$("div.showLoadingIcon").
 $cs->registerScript ( 'result_loader' , 'window.setTimeout(\'location.href="/filemanager/index";\',5000);' , CClientScript::POS_LOAD )
 ?>
 <div>
-    <div class="showLoadingIcon" style="margin: 0 auto;"><img src="<?= Yii::app ()->params['PLUGIN_DIR'] ?>/skin/img/loading-image.png" /></div>
+    <div class="showLoadingIcon" style="margin: 0 auto;"><img src="<?= $this->editorAssets ?>/skin/img/loading-image.png" /></div>
 </div>

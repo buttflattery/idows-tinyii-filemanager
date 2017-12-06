@@ -15,13 +15,13 @@ if(Yii::app()->request->isAjaxRequest){
     $cs->scriptMap['jquery.js']=false;
     $cs->scriptMap['jquery.min.js']=false;
 }else{
-    $cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/skin/skin.min.css' );
-    $cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/bootstrap.css' );
+    $cs->registerCssFile ( $this->editorAssets . '/skin/skin.min.css' );
+    $cs->registerCssFile ( $this->editorAssets . '/css/bootstrap.css' );
 }
 
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/forms/main.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/forms/form.css' );
-$cs->registerScriptFile(Yii::app ()->params['PLUGIN_DIR'].'/js/forms/custom.js');
+$cs->registerCssFile ( $this->editorAssets . '/css/forms/main.css' );
+$cs->registerCssFile ( $this->editorAssets . '/css/forms/form.css' );
+$cs->registerScriptFile($this->editorAssets.'/js/forms/custom.js');
 $cs->registerScript('effect-flash','
 if(typeof top.tinymce!=="undefined"){
     var args=top.tinymce.activeEditor.windowManager.getParams();

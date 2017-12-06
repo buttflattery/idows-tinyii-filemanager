@@ -11,13 +11,13 @@
 ?>
 <!-- CREATE FOLDER BUTTON -->
 <div class="idows-widget idows-btn idows-menubtn idows-abs-layout-item idows-first" id="add_folder" data-action="addFolder" role="button" title="Create Folder">
-    <button  type="button" id="idows-63-open">
+    <button  type="button" name="create_folder">
         <i class="idows-ico idows-i-create"></i>
         &nbsp;Create Folder
     </button>
 </div>
 <!-- UPLOAD FILE FORM -->
-<div id="upload_form_container" class="idows-widget idows-btn idows-menubtn idows-abs-layout-item" role="button" aria-haspopup="true" title="Upload File" >
+<div id="upload_form_container" class="idows-widget idows-btn idows-menubtn idows-abs-layout-item" role="button" title="Upload File" >
     <?php
     $form = $this->beginWidget ( 'CActiveForm' , [
         'id' => 'upl' ,
@@ -35,14 +35,14 @@
     <?php $this->endWidget () ?>
 </div>
 <!-- ROOT / HOME DIRECTORY BUTTON -->
-<div class="idows-widget idows-btn idows-abs-layout-item" role="button" aria-label="Home"  title="Home Directory">
-    <button type="button" data-action="home">
+<div class="idows-widget idows-btn idows-abs-layout-item" role="button" title="Home Directory">
+    <button type="button" data-action="home" name="home">
         <i class="idows-ico idows-i-home"></i>&nbsp;Home
     </button>
 </div>
 <!-- REFRESH BUTTON -->
 <div class="idows-widget idows-btn idows-abs-layout-item" role="button" aria-label="Refresh file list" title="Refresh">
-    <button  type="button" data-action="reload">
+    <button  type="button" data-action="reload" name="reload">
         <i class="idows-ico idows-i-refresh"></i>&nbsp;Refresh
     </button>
 </div>
@@ -50,18 +50,18 @@
 <div class="idows-widget idows-btn idows-btn-group" style="right: 270px; position: absolute; ">
     <!-- LIST VIEW BUTTON -->
     <div class="idows-widget idows-btn idows-first" role="button" aria-label="List" title="List View">
-        <button  type="button" id="listView" data-action="listView">
+        <button  type="button" id="listView" data-action="listView" name="listView">
             <i class="idows-ico idows-i-list"></i></button>
     </div>
     <!-- THUMBNAIL VIEW BUTTON -->
     <div class="idows-widget idows-btn idows-last idows-active" role="button" aria-label="Thumbnails" title="Thumb View">
-        <button  type="button" id="thumbView" data-action="thumbView"><i class="idows-ico idows-i-thumbs"></i></button>
+        <button  type="button" id="thumbView" data-action="thumbView" name="thumbView"><i class="idows-ico idows-i-thumbs"></i></button>
     </div>
 </div>
 <!-- SETTINGS BUTTON -->
 <div class="idows-widget idows-btn idows-last idows-menubtn idows-floatpanel" role="button" aria-label="Settings" title="Settings" 
      style="display: none; right:358px; top:2px;">
-    <button type="button" id="settings" data-action="settings">
+    <button type="button" id="settings" data-action="settings" name="settings">
         <i class="idows-ico idows-i-settings"></i>
     </button>
 </div>
@@ -92,7 +92,7 @@
 <div class="idows-combobox idows-abs-layout-item idows-last idows-has-open" id="filter-wrapper" >
     <input placeholder="Start typing to filter files."  value="" class="idows-textbox" id="filter_now" style="width: 153px;" />
     <div role="button"  class="idows-btn idows-open">
-        <button type="button">
+        <button type="button" name="filterbutton">
             <i class="idows-ico idows-i-filter"></i></button>
     </div>
 </div>

@@ -1,0 +1,161 @@
+/**
+ * Tinyii idowsFileBrowser - a TinyMCE File Manager Plugin for Yii 1.x
+ * @License: MIT License
+ * @Plugin info: TinyMCE filemanager plugin to be used with Yii 1.x 
+ * or as a standalone filemanager without TinyMCE Editor in Yii 1.x
+ * @Author: Muhammad Omer Aslam<buttflattery@gmail.com>
+ * @url: https://plugins.idowstech.com
+ * @Version: 1.0
+ */
+
+#upload_target {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.upload_infobar {
+    display: none;
+    font-size: 12pt;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.upload_infobar img.spinner {
+    margin-right: 10px;
+}
+
+.upload_infobar a {
+    color: #0000cc;
+}
+
+#upload_additional_info {
+    font-size: 10pt;
+    padding-left: 26px;
+}
+
+#the_plugin_name {
+    margin: 15px 0 0 0;
+}
+
+#the_plugin_name,
+#the_plugin_name a {
+    color: #777;
+    font-size: 9px;
+}
+
+#the_plugin_name a {
+    text-decoration: none;
+}
+
+#the_plugin_name a:hover {
+    color: #333;
+}
+
+
+/* this class makes the upload script output visible */
+
+.upload_target_visible {
+    width: 100%!important;
+    height: 200px!important;
+    border: 1px solid #000!important;
+    display: block!important
+}
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -120px;
+    /* -1 * image width / 2 */
+    margin-top: -32px;
+    /* -1 * image height / 2 */
+}
+
+.alert-success {
+    background-color: #dff0d8 !important;
+    border-color: #d6e9c6 !important;
+    color: #3c763d !important;
+}
+
+.alert {
+    border: 1px solid transparent !important;
+    border-radius: 4px !important;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+}
+
+.alert-info {
+    background-color: #d9edf7 !important;
+    border-color: #bce8f1 !important;
+    color: #31708f !important;
+}
+
+.alert-danger {
+    background-color: #f2dede !important;
+    border-color: #ebccd1 !important;
+    color: #a94442 !important;
+}
+
+b,
+strong {
+    font-weight: 700 !important;
+}
+
+.alert-dismissible .close {
+    color: inherit !important;
+    position: relative !important;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+    padding-right: 35px !important;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+#fileview .ui-selecting {
+    background: #FECA40;
+}
+
+#fileview .ui-selected {
+    background: #F39814;
+    color: white;
+    border: 5px solid black;
+    border-radius: 5ps
+}
+
+.jbFileBox {
+    cursor: pointer !important;
+    display: block !important;
+    font-size: 11px !important;
+    left: 4px !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 87px;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    line-height: inherit;
+}
+
+#dialog>iframe {
+    width: inheirt !important;
+    height: inheirt !important;
+}
+.cke_dialog_contents_body{
+    padding:0 !important;
+}

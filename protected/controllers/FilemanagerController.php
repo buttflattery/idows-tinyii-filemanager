@@ -14,25 +14,38 @@ class FilemanagerController extends Controller {
 
     //Files to be ignored when iterating the directory
     private $ignoreFiles = [ 'root' => [ '.' , '..' , '.gitignore' ] , 'subfolder' => [ '.' , '.gitignore' ] ];
+    public $editorAssets = '';
 
     public function beforeAction( $action ) {
         $isIndexAction = $action->id == 'index';
 
-        if ( !Yii::app ()->user->isGuest && Yii::app ()->user->isAdmin () ) {
-            return true;
-        }
-
         if ( $isIndexAction ) {
             $isReferrerNotEmpty = Yii::app ()->request->urlReferrer !== null;
 
-            if ( $isReferrerNotEmpty ) {
+            if ( !Yii::app ()->user->isGuest && Yii::app ()->user->isAdmin () ) {
+                $this->editorAssets = Yii::app ()->getBaseUrl ( true ) . Yii::app ()->session['editorAssets'] = Yii::app ()->params['PLUGIN_DIR'];
                 return true;
-            } else if ( !$isReferrerNotEmpty ) {
-                throw new Exception ( 'Direct Access Restricted, you need to be logged-in as an admin.' );
             }
-
-            return false;
+            
+            if ( $isReferrerNotEmpty ) {
+                $editorType = $_GET['editor'];
+                $isRedactorJs = $editorType == '_RA';
+                $isCKEditor = $editorType == '_CK';
+                $isTinyMCE = $editorType == '';
+                
+                if ( $isRedactorJs ) {
+                    $this->editorAssets = Yii::app ()->getBaseUrl ( true ) . Yii::app ()->session['editorAssets'] = Yii::app ()->booster->getAssetsUrl () . DIRECTORY_SEPARATOR . 'redactor' . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . 'idowsfilemanager';
+                    return true;
+                    //$this->editorAssets = Yii::app ()->booster->getAssetsUrl () . DIRECTORY_SEPARATOR . 'redactor' . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . 'idowsfilemanager';
+                } else if ( $isCKEditor || $isTinyMCE ) {
+                    $this->editorAssets = Yii::app ()->getBaseUrl ( true ) . Yii::app ()->session['editorAssets'] = Yii::app ()->params['PLUGIN_DIR' . $editorType];
+                    //$this->editorAssets = Yii::app ()->params['PLUGIN_DIR' . $editorType];
+                    return true;
+                }
+            }
+            throw new Exception ( 'Direct Access Restricted, you need to be logged-in as an admin.' );
         }
+        $this->editorAssets = Yii::app ()->session['editorAssets'];
         return true;
     }
 
@@ -74,11 +87,11 @@ class FilemanagerController extends Controller {
             array_unshift ( $sortedItemList , '..' );
         }
 
-        return $this->renderPartial ( 'thumb-view' , [
-                    'itemList' => $sortedItemList ,
-                    'targetDirectory' => $targetDirectory ,
-                    'mainRoot' => $mainRoot
-                        ] , false , true );
+        $this->renderPartial ( 'thumb-view' , [
+            'itemList' => $sortedItemList ,
+            'targetDirectory' => $targetDirectory ,
+            'mainRoot' => $mainRoot
+                ] , false , true );
     }
 
     /**
@@ -611,7 +624,7 @@ class FilemanagerController extends Controller {
         foreach ( $clipboardItems as $folder ) {
             $source = realpath ( $root . DIRECTORY_SEPARATOR . $folder );
             $des = $destination . DIRECTORY_SEPARATOR . basename ( $folder );
-            if ( !($r=$this->xcopy ( $source , $des ))) {
+            if ( !($r = $this->xcopy ( $source , $des )) ) {
                 $errors = true;
             }
             unset ( $clipboardItems[$index] );
@@ -969,6 +982,10 @@ class FilemanagerController extends Controller {
         }
 
         return false;
+    }
+
+    public function actionTest() {
+        return $this->renderPartial ( 'test' , [] , false , true );
     }
 
 }

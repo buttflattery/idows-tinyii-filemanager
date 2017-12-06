@@ -75,7 +75,7 @@ foreach ( $itemList as $sort => $item ) {
              data-id = "<?= htmlentities ( DIRECTORY_SEPARATOR . ((!empty ( $subDirectory )) ? implode ( DIRECTORY_SEPARATOR , $subDirectory ) . DIRECTORY_SEPARATOR : '') . $item ) ?>"  id="pic_<?= $count ?>">
                  <?php if ( $fileIcon == 'image' ) { ?>
                 <div class="l-image showLoadingIcon">
-                    <img src="<?= Yii::app ()->params['PLUGIN_DIR'] ?>/css/filetree/images/image.png" alt="" title="" />
+                    <img src="<?= $this->editorAssets ?>/css/filetree/images/image.png" alt="" title="" />
                 </div>
                 <?php
             } else {
@@ -90,7 +90,7 @@ foreach ( $itemList as $sort => $item ) {
             </div>
         </div>
         <?php
-        echo '<script type="text/javascript">jQuery("#pic_' . $count . ' div.showLoadingIcon").nailthumb({width:128,height:128,method:\'resize\',fitDirection:\'center center\',animationTime:5000,replaceAnimation:\'fade\',imageUrl: \'' . str_replace ( '\\' , '/' , $itemUrl ) . '\'});</script>';
+        echo '<script type="text/javascript">jQuery("#pic_' . $count . ' div.showLoadingIcon").nailthumb({width:128,height:128,method:\'resize\',fitDirection:\'center center\',animationTime:1000,replaceAnimation:\'animate\',titleAttr:\'\',imageUrl: \'' . str_replace ( '\\' , '/' , $itemUrl ) . '\'});</script>';
         ?>
         <?php
     }

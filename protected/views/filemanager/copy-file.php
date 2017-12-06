@@ -12,7 +12,7 @@ $cs = Yii::app ()->getClientScript ();
 $cs->registerCoreScript ( 'jquery' , CClientScript::POS_HEAD );
 $cs->registerCssFile ( Yii::app ()->request->baseUrl . '/css/main.css' );
 $cs->registerCssFile ( Yii::app ()->request->baseUrl . '/css/form.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/skin/skin.min.css' );
+$cs->registerCssFile ( $this->editorAssets . '/skin/skin.min.css' );
 $cs->registerScript ( 'effect-flash' , '$(".flash-success").animate({opacity: 1.0}, 3000).fadeOut("slow");' , CClientScript::POS_READY );
 ?>
 <div id="content">

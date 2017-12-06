@@ -1,11 +1,11 @@
-# Tinyii v1.0 - TinyMCE File Manager Plugin for YII 1.xx By IDOWSTECH #
+# Tinyii v1.0 - IDOWS File Manager Plugin for YII 1.xx By IDOWSTECH #
 ***
 ## SETUP INSTRUCTIONS ##
 
 ### INTRODUCTION ###
-Tinyii file manager is a TINYMCE plugin that is used to manage assets and files for your editors 
-using Yii 1.x framework. You can use tinyYii Filemanager as a plugin for TinyMCE Editor or use it 
-as a standalone filemanager without TinyMCE Editor.
+**Tinyii file manager is a Text Editor plugin that is used to manage assets and files 
+using Yii 1.x framework. You can use TinyYii Filemanager as a plugin for Text Editors or use it 
+as a standalone filemanager**.
 
 ### Version ###
 **1.0.0**
@@ -29,17 +29,21 @@ as a standalone filemanager without TinyMCE Editor.
 * [VideoJs](http://videojs.com/)
 
 ### Tested With ###
-* TinyMCE all versions up to latest 4.x.
-* Yii 1.x versions 
-* Jquery 2.x.x 
+* Yii v1.x. 
+* Jquery v2.x.x 
 * Browsers 
     * Microsoft Edge 40.15063.674.0
     * Microsoft EdgeHTML 15.15063
     * Mozilla FF 56.0.1 (64-bit)
     * Chrome Version 62.0.3202.62 (Official Build) (64-bit)
 ### Integrations ###
-* **TinyMCE Editors 3.x, 4.x**
-* **Standalone filemanager without TinyMCE Yii 1.x**
+* **Text Editors**
+* **Standalone file manager Yii 1.x**
+
+### Flavours ###
+* TinyMCE all versions up to latest v4.x.
+* CKEditor v4.x
+* RedactorJs Redactor v9.x.
 
 ### Demo ###
 * Click here to see the [Demo](http://plugins.idowstech.com/demo)
@@ -190,9 +194,9 @@ as a standalone filemanager without TinyMCE Editor.
 
     ![video-preview](http://plugins.idowstech.com/images/video-preview.png)
 
-* **Insert Files To TinyMCE Editor**
+* **Insert Files To Editor**
     
-    You can insert the files inside the editor by double clicking them. The file insertion tag for the tinyMCE editor vary on their types.
+    You can insert the files inside the editor by double clicking them. The file insertion tag for the editor vary on their types.
 
     + **Media Tags**
 
@@ -216,12 +220,14 @@ as a standalone filemanager without TinyMCE Editor.
 * **Editor Plugin**
 * **Standalone (For Admin Only)**
 
-### As a plugin with TinyMCE ###
+***
+### As a plugin with Text Editors ###
+***
 
 **Clone or download the source files from any of the following links and unzip files anywhere on your drive.**
 
-* **[Github]()**
-* **[YiiFramework]()**
+* **[Github](https://github.com/buttflattery/idows-tinyii-filemanager)**
+* **[YiiFramework](http://www.yiiframework.com/extension/idows-tinyii-filemanager/files/idows-tinyii-filemanager.zip)**
 * **[Idowstech](http://plugins.idowstech.com/download)**
 
 **Copy the following to the relevant directories as described below.**
@@ -231,7 +237,7 @@ as a standalone filemanager without TinyMCE Editor.
 * _`protected/views/filemanager`_ -> _`protected/views`_
 * _`protected/models/*.*`_ -> _`protected/models/*.*`_
 * _`protected/components/Helper.php`_ -> _`protected/components`_ _(if you have an existing `Helper.php` class file add all the static methods from this file to your `Helper.php` class file)_
-* _`plugin/idowsfilemanager`_ -> _copy to the plugins directory inside the tinymce plugin source my path is `my_app_webroot/js/tinymce/plugins/idowsfilemanager`_
+
 * _`protected/components/WebUser.php`_ -> _`protected/components/`_ make sure you have a user model associated with you db table user.
 
 Open `protected/config/main.php` and add the following to the components section.
@@ -242,15 +248,22 @@ Open `protected/config/main.php` and add the following to the components section
 
 Open `protected/config/params.php` file and update the `PLUGIN_DIR` and `UPLOAD_DIR` contants relevant to your project root.
 
-    'UPLOAD_DIR' => path/to/your/uploads/directory ,
-    'PLUGIN_DIR' => path/to/tinymce/idowsplugin
+    'UPLOAD_DIR' => DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'tinyii-uploads' ,
+    'PLUGIN_DIR' => DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'tinymce' . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . 'idowsfilemanager',
+    'PLUGIN_DIR_CK' => DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'ckeditor' . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . 'idowsfilemanager',
 
  You should assign valid paths for these directories and make sure they exist.
 
-_Note: If you are logged in as a guest or a normal user you can access the plugin via tinyMCE editor button only. If you are logged in as an admin you will be provided access to both the interfaces standalone and tinyMCE._
+_Note: If you are logged in as a guest or a normal user you can access the plugin via editor button only. If you are logged in as an admin you will be provided access to both the interfaces standalone and Editor._
 
-
+***
 ### Configuring Editor To use The Plugin ###
+
+***
+####**1. TinyMCE 3.x, 4.x.**####
+
+* _`plugins/idowsfilemanager`_ -> _copy to the plugins directory inside the tinymce plugin source my path is `my_app_webroot/js/tinymce/plugins/idowsfilemanager`_
+
 After you have copied all the sources from the extracted zip file you need to configure the editor to use the plugin.
 
 Copy the following to the head of the document where you want to integrate the editor. Place the very first line 
@@ -259,7 +272,7 @@ _`$baseUrl = Yii::app ()->getBaseUrl ( true );`_
 
 to the top of your view file, and then paste the
 
- _`tinymce.init()`_ 
+ _`tinymce.init`_ 
  
  section 
 to the head or you can use _`Yii::app()->clientScript()`_ to load the script on Document ready i.e _`CClientScript::POS_READY`_.
@@ -272,20 +285,11 @@ to the head or you can use _`Yii::app()->clientScript()`_ to load the script on 
                     relative_urls:true,
                     selector: "textarea",
                     plugins: [
-                        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-                        "searchreplace wordcount visualblocks visualchars code fullscreen",
-                        "insertdatetime media nonbreaking save table contextmenu directionality",
-                        "emoticons template paste textcolor idowsfilemanager",
-                        "colorpicker textpattern imagetools"
+                        "idowsfilemanager"
                     ],
-                    toolbar1: "insertfile undo redo | fontsizeselect fontselect  | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link ",
-                    toolbar2: "print preview media | forecolor backcolor emoticons | idowsfilemanager",
+                    toolbar1: "idowsfilemanager",
                      fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                     image_advtab: true,
-                    templates: [
-                        {title: \'Test template 1\', content: \'Test 1\'},
-                        {title: \'Test template 2\', content: \'Test 2\'}
-                    ]
                 });
                 ' , CClientScript::POS_READY );
 				
@@ -298,7 +302,76 @@ You can either copy paste the whole code block or if you already have setup edit
 	
 Then include _`idowsfilemanager`_ to your _`plugins`_ and _`toolbar`_ options.
 
-**_Note: After configuring editor you should go to your _`protected/config/main.php`_ and turn on prettyl urls by adding the _`urlManager`_ inside the _`components`_ section like below as the calls inside the script use pretty urls._**
+***
+
+####**2. CKEditor 4.x.**####
+
+* _`plugins/idowsfilemanager`_ -> _copy to the plugins directory inside the ckeditor plugin source directory my path is `my_app_webroot/js/ckeditor/plugins/idowsfilemanager`_
+
+After you have copied all the sources from the extracted zip file you need to configure the editor to use the plugin.
+
+    $cs = Yii::app ()->getClientScript ();
+    $cs->registerScriptFile ( '/js/ckeditor/ckeditor.js' , CClientScript::POS_HEAD );
+    $cs->registerScript ( 'init-editor' , 'CKEDITOR.replace("ck_custom",{customConfig:"/js/config.js"})' , CClientScript::POS_READY );
+	
+    **/js/config.js**
+    //CKEditor configuration file
+    CKEDITOR.editorConfig = ( config ) => {
+        config.language = 'en';
+        config.extraPlugins = 'idowsfilemanager';
+        config.uiColor = '#f8f8f8';
+        config.height = 300;
+        config.toolbarCanCollapse = true;
+    };
+    
+That is all you need to do for CKEditor, now refresh the page and click the IDOWS Filemanager button.
+
+***
+
+####**3. RedactorJs 9.x.**####
+
+<kbd>Important</kbd> _**This library is NOT free to use. Community license for it was generously bought by the Yii community to be used with [YiiBooster Extension](https://github.com/clevertech/yiibooster) 4.xx based on Bootstrap 3.1.1 and later, so you can use YiiBooster legally in Yii-based projects ONLY.**_
+
+* Download [YiiBooster](https://github.com/clevertech/yiibooster) Extension or copy  the added sources to your applications extensions directory.
+
+* _`protected/extensions/booster -> protected/extensions/`_
+
+After copying the files open **`protected/config/main.php`** and add `booster` to your `preload` array 
+
+    'preload'=>array('log','booster')
+    
+and add the following to the components array.
+
+    'booster' => array(
+	    'class' => 'application.extensions.booster.components.Booster',
+    ),` 
+
+* Then copy files from  _`plugins/redactor/idowsfilemanager`_ ->  to the plugins directory inside the redactorjs plugin source directory my path is _`protected/extensions/booster/assets/redactor/plugins/idowsfilemanager`_
+
+After you have copied all the sources you need to initalize and configure the Redactor Editor to use the plugin. You need to initialize the editor using the yii booster extension. See below.
+
+    $cs = Yii::app ()->getClientScript ();
+    $this->widget (
+        'booster.widgets.TbRedactorJs' , [
+            'name' => 'content' ,
+            'id'=>'content_id',
+            'value' => 'A sample text to load into the editor!' ,
+            'editorOptions' => [
+                'lang' => 'en' ,
+                'plugins' => [ 'fontfamily' , 'textdirection', 'idowsfilemanager']
+            ] ,
+        ]
+    );
+    
+* <kbd>Important</kbd> Please note that the name is set to "content", which is required for Redactor plugin to fetch the original data from input and paste it into its editor view. If you do not set "name" or set it to any other value, the value of value property of this widget will be completely ignored!
+
+* <kbd>Important</kbd> In addition to previous note, if you have several Redactor instances on the same page, you must use the htmlOptions property to set the HTML ID of each Redactor instance to different values. 
+
+__________________________________________
+
+**Enable Pretty Urls**
+
+**_Note: After configuring any of the editors above you should go to your _`protected/config/main.php`_ and turn on prettyl urls by adding the _`urlManager`_ inside the _`components`_ section like below as the calls inside the script use pretty urls._**
 
     'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -311,32 +384,22 @@ Then include _`idowsfilemanager`_ to your _`plugins`_ and _`toolbar`_ options.
 		),
 		
 		
-if all above is done correctly then browse the page where you have configured the TinyMce Editor, once the editor loads you can see the IDOWS Tinyii Filemanager button in the toolbar and you are all done.
+if all above is done correctly then browse the page where you have configured any of the above Text Editors, once the editor loads you can see the IDOWS Tinyii Filemanager button in the toolbar and you are all done.
 
 ![image-preview](http://plugins.idowstech.com/images/config-success.png)
 
+***
 ## For Standalone Usage ##
+***
 
-All the steps you followed above are to be followed for the Standalone usage, the only extra thing that you need to copy is the YiiBooster Extension. You can either download it from the url http://yiibooster.clevertech.biz/ or you can copy the added sources to your applications extensions directory.
+All the steps you followed above are to be followed for the Standalone usage excluding the steps for the Editor Confguration, go to your web application and access the following url while logged in with the admin user. 
 
-* _`protected/extensions/booster -> protected/extensions/`_
-
-After copying the files open **`protected/config/main.php`** and add `booster` to your `preload` array 
-
-    'preload'=>array('log','booster')
-    
-and add the following to the components array and you are all done.
-
-    'booster' => array(
-	    'class' => 'application.extensions.booster.components.Booster',
-    ),`
-After adding to the components array you can go to your application and access the following url while logged in with the admin user. 
-
-http://yourdomain.com/filemanager/index
+**http://yourdomain.com/filemanager/index**
 
 ![image-preview](http://plugins.idowstech.com/images/standalone.png)
 
 ## Who do I talk to? ##
 
+* [buttflattery@hotmail.com](https://www.facebook.com/omer.aslam)
 * [buttflattery@gmail.com](https://www.facebook.com/omer.aslam)
-* omeraslam@idowstech.com
+* [omeraslam@idowstech.com](https://www.facebook.com/omer.aslam)

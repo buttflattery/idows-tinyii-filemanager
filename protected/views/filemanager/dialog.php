@@ -11,28 +11,30 @@
 
 $cs = Yii::app ()->getClientScript ();
 $baseUrl = Yii::app ()->getBaseUrl ( true );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/dialog.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/skin/skin.min.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/filetree/filetree.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/context-menu.css' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/jquery-ui.css' );
+$cs->registerCssFile ( $this->editorAssets . '/css/dialog.css' );
+$cs->registerCssFile ( $this->editorAssets . '/skin/skin.min.css' );
+$cs->registerCssFile ( $this->editorAssets . '/css/filetree/filetree.min.css' );
+$cs->registerCssFile ( $this->editorAssets . '/css/context-menu.css' );
+$cs->registerCssFile ( $this->editorAssets . '/css/jquery-ui.css' );
 $cs->registerCssFile ( 'https://fonts.googleapis.com/css?family=Roboto' );
-$cs->registerCoreScript ( 'jquery' , CClientScript::POS_HEAD );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/lodash.min.js' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/idows-file-browser.js' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/filetree/filetree.js' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/jquery-ui.min.js' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/context.menu.js' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/jquery.ui.position.js' );
-$cs->registerCssFile ( Yii::app ()->params['PLUGIN_DIR'] . '/css/nailThumb/jquery.nailthumb.1.1.css' );
-$cs->registerScriptFile ( Yii::app ()->params['PLUGIN_DIR'] . '/js/nailThumb/jquery.nailthumb.1.1.js' );
+$cs->registerCoreScript ( 'jquery' , CClientScript::POS_END );
+$cs->registerScriptFile ( $this->editorAssets . '/js/lodash.min.js',CClientScript::POS_END );
+$cs->registerScriptFile ( $this->editorAssets . '/js/idows-file-browser.min.js' );
+//$cs->registerScriptFile ( $this->editorAssets . '/js/idows-file-browser.js' ,CClientScript::POS_END);
+$cs->registerScriptFile ( $this->editorAssets . '/js/filetree/filetree.min.js' );
+//$cs->registerScriptFile ( $this->editorAssets . '/js/filetree/filetree.js',CClientScript::POS_END );
+$cs->registerScriptFile ( $this->editorAssets . '/js/jquery-ui.min.js' ,CClientScript::POS_END);
+$cs->registerScriptFile ( $this->editorAssets . '/js/context.menu.js' ,CClientScript::POS_END);
+$cs->registerScriptFile ( $this->editorAssets . '/js/jquery.ui.position.js',CClientScript::POS_END );
+$cs->registerCssFile ( $this->editorAssets . '/css/nailThumb/jquery.nailthumb.1.1.css' );
+$cs->registerScriptFile ( $this->editorAssets . '/js/nailThumb/jquery.nailthumb.1.1.js',CClientScript::POS_END );
 $cs->registerScript ( 'loadtree' , '
-        var jbObj   =   idowsFileBrowser.init('
+       idowsFileBrowser.init('
         . '{
-            assetsDir:"' . Yii::app ()->params['PLUGIN_DIR'] . '",
+            assetsDir:"' . $this->editorAssets . '",
             uploadDir:"' . str_replace ( "\\" , '/' , Yii::app ()->params['UPLOAD_DIR'] ) . '/"
         }'
-        . ');' );
+        . ');',CClientScript::POS_LOAD );
 ?>
 <?php echo $this->renderPartial ( 'alerts' ); ?>
 <div class="idows-container-body">
@@ -46,7 +48,7 @@ $cs->registerScript ( 'loadtree' , '
 
                 <!--UPLOAD PROGRESS INFO BAR-->
                 <div id="upload_in_progress" class="upload_infobar">
-                    <img src="<?= Yii::app ()->params['PLUGIN_DIR'] ?>/skin/img/loader.gif" width="16" height="16" class="spinner">
+                    <img src="<?= $this->editorAssets ?>/skin/img/loader.gif" width="16" height="16" class="spinner">
                     Upload in progress&hellip; 
                     <div id="upload_additional_info"></div>
                 </div>
