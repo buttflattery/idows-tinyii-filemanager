@@ -25,10 +25,10 @@ class TinyiiRenameForm extends CFormModel {
 
     public function checkValidFileName( $attribute , $params ) {
         if ( !$this->hasErrors () ) {
-            $pattern    =   '/[ ^\/\?\*\:\;\{\}\\ ]+/';
+            $pattern    =   '/[\*\[\:\\\^\!\/\|\?]|[^\x00-\x7F]+/i';
             
            if(preg_match($pattern , $this->name)){
-               $this->addError( $attribute , 'Filename cannot contain these characters / ? * : ; { } \\ ' );
+               $this->addError( $attribute , 'File name cannot contain non-english or any of these characters ~ " # % & * : < > ? / \ { | }..' );
            }
         }
     }
