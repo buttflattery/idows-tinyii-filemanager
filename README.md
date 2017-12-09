@@ -46,7 +46,9 @@ as a standalone filemanager**.
 * RedactorJs Redactor v9.x.
 
 ### Demo ###
-* Click here to see the [Demo](http://plugins.idowstech.com/demo)
+* Click here to see the [TinyMCE Demo](http://plugins.idowstech.com/site/demo)
+* Click here to see the [CKEditor Demo](http://plugins.idowstech.com/site/demockeditor)
+* Click here to see the [RedactorJs Demo](http://plugins.idowstech.com/site/demoredactor)
 
 ### Features ###
 
