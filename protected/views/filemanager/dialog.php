@@ -22,7 +22,7 @@ $cs->registerScriptFile ( $this->editorAssets . '/js/lodash.min.js',CClientScrip
 $cs->registerScriptFile ( $this->editorAssets . '/js/idows-file-browser.min.js' );
 //$cs->registerScriptFile ( $this->editorAssets . '/js/idows-file-browser.js' ,CClientScript::POS_END);
 $cs->registerScriptFile ( $this->editorAssets . '/js/filetree/filetree.min.js' );
-//$cs->registerScriptFile ( $this->editorAssets . '/js/filetree/filetree.js',CClientScript::POS_END );
+// $cs->registerScriptFile ( $this->editorAssets . '/js/filetree/filetree.js',CClientScript::POS_END );
 $cs->registerScriptFile ( $this->editorAssets . '/js/jquery-ui.min.js' ,CClientScript::POS_END);
 $cs->registerScriptFile ( $this->editorAssets . '/js/context.menu.js' ,CClientScript::POS_END);
 $cs->registerScriptFile ( $this->editorAssets . '/js/jquery.ui.position.js',CClientScript::POS_END );
