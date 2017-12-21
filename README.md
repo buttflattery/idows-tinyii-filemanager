@@ -2,7 +2,7 @@
 
 ### INTRODUCTION ###
 **TinYii File Manager is a Text Editor plugin that is used to manage assets and files 
-using Yii 1.x framework. You can use TinyYii Filemanager as a plugin for Text Editors or use it 
+using Yii 1.x framework. You can use TinYii Filemanager as a plugin for Text Editors or use it 
 as a standalone filemanager**.
 
 ***
