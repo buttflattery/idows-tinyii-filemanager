@@ -1,11 +1,11 @@
 # Tinyii v1.0 - IDOWS File Manager Plugin for YII 1.xx By IDOWSTECH #
-***
-## SETUP INSTRUCTIONS ##
 
 ### INTRODUCTION ###
 **Tinyii file manager is a Text Editor plugin that is used to manage assets and files 
 using Yii 1.x framework. You can use TinyYii Filemanager as a plugin for Text Editors or use it 
 as a standalone filemanager**.
+
+***
 
 ### Version ###
 **1.0.0**
@@ -213,6 +213,8 @@ as a standalone filemanager**.
       All images are added as an image tag inside the editor.
 
 
+
+## SETUP INSTRUCTIONS ##
 
 
 ## How do I get set up? ##
