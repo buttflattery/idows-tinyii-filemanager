@@ -25,7 +25,6 @@ as a standalone filemanager**.
 * [JQuery Nailthumb v1.1 by Garlab](http://www.garralab.com/nailthumb.php).
 * [JQuery Context Menu](https://github.com/swisnl/jQuery-contextMenu).
 * [Bootstrap v3.1.1](https://getbootstrap.com/docs/3.3/getting-started/).
-* [Lo-Dash 0.10.0](lodash.com) with [Underscore.js 1.4.2](underscorejs.org).
 * [VideoJs](http://videojs.com/)
 
 ### Tested With ###
