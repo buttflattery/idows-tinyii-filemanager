@@ -43,7 +43,7 @@ as a standalone filemanager**.
 ### Flavours ###
 * TinyMCE all versions up to latest v4.x.
 * CKEditor v4.x
-* RedactorJs Redactor v9.x.
+* RedactorJs Redactor v9.x. YiiBooster Only
 
 ### Demo ###
 * Click here to see the [TinyMCE Demo](http://plugins.idowstech.com/site/demo)
@@ -64,7 +64,7 @@ as a standalone filemanager**.
     
     **Delete Multiple Files**
 
-    ![delete-multiple-files](http://plugins.idowstech.com/images/delete-multiple-files.png)
+    ![delete-multiple-files](http://plugins.idowstech.com/images/delete-multi   ple-files.png)
 
      
     **Delete Single File**
