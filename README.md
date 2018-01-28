@@ -1,11 +1,11 @@
 # Tinyii v1.0 - IDOWS File Manager Plugin for YII 1.xx By IDOWSTECH #
-***
-## SETUP INSTRUCTIONS ##
 
 ### INTRODUCTION ###
-**Tinyii file manager is a Text Editor plugin that is used to manage assets and files 
-using Yii 1.x framework. You can use TinyYii Filemanager as a plugin for Text Editors or use it 
+**TinYii Filemanager is a Text Editor plugin that is used to manage assets and files 
+using Yii 1.x framework. You can use TinYii Filemanager as a plugin for Text Editors or use it 
 as a standalone filemanager**.
+
+***
 
 ### Version ###
 **1.0.0**
@@ -25,7 +25,6 @@ as a standalone filemanager**.
 * [JQuery Nailthumb v1.1 by Garlab](http://www.garralab.com/nailthumb.php).
 * [JQuery Context Menu](https://github.com/swisnl/jQuery-contextMenu).
 * [Bootstrap v3.1.1](https://getbootstrap.com/docs/3.3/getting-started/).
-* [Lo-Dash 0.10.0](lodash.com) with [Underscore.js 1.4.2](underscorejs.org).
 * [VideoJs](http://videojs.com/)
 
 ### Tested With ###
@@ -46,7 +45,7 @@ as a standalone filemanager**.
 * RedactorJs Redactor v9.x. YiiBooster Only
 
 ### Demo ###
-* Click here to see the [TinyMCE Demo](http://plugins.idowstech.com/site/demo)
+* Click here to see the [TinyMCE Demo](http://plugins.idowstech.com/site/demotinymce)
 * Click here to see the [CKEditor Demo](http://plugins.idowstech.com/site/demockeditor)
 * Click here to see the [RedactorJs Demo](http://plugins.idowstech.com/site/demoredactor)
 
@@ -213,6 +212,8 @@ as a standalone filemanager**.
       All images are added as an image tag inside the editor.
 
 
+
+## SETUP INSTRUCTIONS ##
 
 
 ## How do I get set up? ##
