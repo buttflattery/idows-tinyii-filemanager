@@ -1,3 +1,4 @@
 plugins/ckeditor/* linguist-vendored
 plugins/redactor/* linguist-vendored
 plugins/tinymce/* linguist-vendored
+protected/extensions/booster/* linguist-vendored
