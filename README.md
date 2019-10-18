@@ -45,9 +45,9 @@ as a standalone filemanager**.
 * RedactorJs Redactor v9.x. YiiBooster Only
 
 ### Demo ###
-* Click here to see the [TinyMCE Demo](http://plugins.idowstech.com/site/demotinymce)
-* Click here to see the [CKEditor Demo](http://plugins.idowstech.com/site/demockeditor)
-* Click here to see the [RedactorJs Demo](http://plugins.idowstech.com/site/demoredactor)
+* Click here to see the [TinyMCE Demo](http://plugins.omaraslam.com/site/demotinymce)
+* Click here to see the [CKEditor Demo](http://plugins.omaraslam.com/site/demockeditor)
+* Click here to see the [RedactorJs Demo](http://plugins.omaraslam.com/site/demoredactor)
 
 ### Features ###
 
@@ -63,12 +63,12 @@ as a standalone filemanager**.
     
     **Delete Multiple Files**
 
-    ![delete-multiple-files](http://plugins.idowstech.com/images/delete-multi   ple-files.png)
+    ![delete-multiple-files](http://plugins.omaraslam.com/images/delete-multiple-files.png)
 
      
     **Delete Single File**
 
-     ![delete-single-files](http://plugins.idowstech.com/images/delete-single-file.png)
+     ![delete-single-files](http://plugins.omaraslam.com/images/delete-single-file.png)
 
 	_**Note:Multiple folder deletion is not supported yet**_.
 
@@ -81,11 +81,11 @@ as a standalone filemanager**.
 
     **COPY Multiple Files**
 
-    ![copy-multiple-files](http://plugins.idowstech.com/images/copy-multiple-files.png)
+    ![copy-multiple-files](http://plugins.omaraslam.com/images/copy-multiple-files.png)
          
     **Copy Single File**
 
-     ![copy-single-file](http://plugins.idowstech.com/images/copy-single-file.png)
+     ![copy-single-file](http://plugins.omaraslam.com/images/copy-single-file.png)
 
 
 * **Cut / Drag- Drop File(s) / Folder(s)**
@@ -100,57 +100,57 @@ as a standalone filemanager**.
 
     **Cut Multiple Files**
 
-    ![cut-multiple-files](http://plugins.idowstech.com/images/cut-multiple-files.png)
+    ![cut-multiple-files](http://plugins.omaraslam.com/images/cut-multiple-files.png)
 
      **Cut Single File**
 
-     ![cut-single-file](http://plugins.idowstech.com/images/cut-single-file.png)
+     ![cut-single-file](http://plugins.omaraslam.com/images/cut-single-file.png)
 
 	**Drag Drop Files**
 
-    ![drag-files](http://plugins.idowstech.com/images/drag-drop-files.png)
+    ![drag-files](http://plugins.omaraslam.com/images/drag-drop-files.png)
 
 * **Pasting**
 
     Once you `Copy or Cut` a file by selecting the context menu, you can paste files by right-clicking on any blank area inside the file manager. See below.
 
-    ![paste-files](http://plugins.idowstech.com/images/paste-files.png)
+    ![paste-files](http://plugins.omaraslam.com/images/paste-files.png)
 
 * **Rename File(s) / Folder(s)**
 
     You can Rename files by right-clicking on it and using the context menu.
 
-    ![rename-file](http://plugins.idowstech.com/images/rename-file.png)
+    ![rename-file](http://plugins.omaraslam.com/images/rename-file.png)
 
 * **Add Folder**
 
     You can Create a folder Using create Folder button from top toolbar.
 
-    ![add-folder](http://plugins.idowstech.com/images/add-folder.png)
+    ![add-folder](http://plugins.omaraslam.com/images/add-folder.png)
 
 * **List View**
 
     You can view the files in list view mode using Listview icon in toolbar.
 
-    ![list-view](http://plugins.idowstech.com/images/list-view.png)
+    ![list-view](http://plugins.omaraslam.com/images/list-view.png)
 
 * **Thumbnail View**	
 
     You can view the files in Thumbnail mode using thumbnails icon in toolbar.
 
-    ![thumbnail-view](http://plugins.idowstech.com/images/thumbview.png)
+    ![thumbnail-view](http://plugins.omaraslam.com/images/thumbview.png)
 
 * **Sort Files**
 
     You can Sort files in the current directory by using sort drop-down on top right of the filemanager toolbar and choosing sort option.
 
-    ![sort-files](http://plugins.idowstech.com/images/sort-files.png)
+    ![sort-files](http://plugins.omaraslam.com/images/sort-files.png)
 
 * **Filter Files** 	
 
     You can Filter files in the current directory by Typing in the filter box on top right of the filemanager ttoolbar. 
 
-    ![filter-files](http://plugins.idowstech.com/images/filter-files.png)
+    ![filter-files](http://plugins.omaraslam.com/images/filter-files.png)
     
 * **Download Files**
     
@@ -162,7 +162,7 @@ as a standalone filemanager**.
     
     You can click the file to preview it if you are in Listview Mode, and right-click on file to open the context menu and select preview to preview the file if you are in Thumbview Mode.
 
-    ![preview-file](http://plugins.idowstech.com/images/preview-file.png)
+    ![preview-file](http://plugins.omaraslam.com/images/preview-file.png)
     
     
     **Preview Categories**
@@ -185,15 +185,15 @@ as a standalone filemanager**.
 
     **Image Preview**
 
-    ![image-preview](http://plugins.idowstech.com/images/image-preview.png)
+    ![image-preview](http://plugins.omaraslam.com/images/image-preview.png)
 
     **Compressed Files Preview**
 
-    ![compressed-preview](http://plugins.idowstech.com/images/zip-preview.png)
+    ![compressed-preview](http://plugins.omaraslam.com/images/zip-preview.png)
 
     **Video Preview**
 
-    ![video-preview](http://plugins.idowstech.com/images/video-preview.png)
+    ![video-preview](http://plugins.omaraslam.com/images/video-preview.png)
 
 * **Insert Files To Editor**
     
@@ -231,7 +231,7 @@ as a standalone filemanager**.
 
 * **[Github](https://github.com/buttflattery/idows-tinyii-filemanager)**
 * **[YiiFramework](http://www.yiiframework.com/extension/idows-tinyii-filemanager/files/idows-tinyii-filemanager.zip)**
-* **[Idowstech](http://plugins.idowstech.com/download)**
+* **[Idowstech](http://plugins.omaraslam.com/download)**
 
 **Copy the following to the relevant directories as described below.**
 
@@ -389,7 +389,7 @@ __________________________________________
 		
 if all above is done correctly then browse the page where you have configured any of the above Text Editors, once the editor loads you can see the IDOWS Tinyii Filemanager button in the toolbar and you are all done.
 
-![image-preview](http://plugins.idowstech.com/images/config-success.png)
+![image-preview](http://plugins.omaraslam.com/images/config-success.png)
 
 ***
 ## For Standalone Usage ##
@@ -399,10 +399,10 @@ All the steps you followed above are to be followed for the Standalone usage exc
 
 **http://yourdomain.com/filemanager/index**
 
-![image-preview](http://plugins.idowstech.com/images/standalone.png)
+![image-preview](http://plugins.omaraslam.com/images/standalone.png)
 
 ## Who do I talk to? ##
 
 * [buttflattery@hotmail.com](https://www.facebook.com/omer.aslam)
 * [buttflattery@gmail.com](https://www.facebook.com/omer.aslam)
-* [omeraslam@idowstech.com](https://www.facebook.com/omer.aslam)
+* [omeraslam@omaraslam.com](https://www.facebook.com/omer.aslam)
